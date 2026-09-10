@@ -5,7 +5,7 @@ const testPayload = JSON.stringify({
     serviceNeeded: "Custom Drop Inventory Setup"
 });
 
-fetch('http://localhost:4000/api/v1/lead-hook', {
+fetch('https://lead-velocity-api.onrender.com', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: testPayload

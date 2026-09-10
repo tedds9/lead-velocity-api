@@ -31,7 +31,7 @@ app.post('/api/v1/lead-hook', async (req, res) => {
     });
 
     console.log("\n=== 🚀 AUTOMATION ENGINE INTERCEPTED LEAD ===");
-    console.log(alertMessage);
+    console.log(`👤 CLIENT: ${name} | 📞 PHONE: ${phone}`);
     console.log("=============================================\n");
 
     return res.status(200).json({ success: true, message: 'Lead intercepted and formatted successfully!' });
