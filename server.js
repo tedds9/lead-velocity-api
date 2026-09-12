@@ -21,7 +21,7 @@ app.post('/api/v1/lead-hook', async (req, res) => {
       embeds: [{
         title: "⚡ LEAD VELOCITY ALERT",
         color: 16750848, // Premium Orange Hex Variable Code (Color theme)
-        description: `👤 **CLIENT:** ${name}\n📞 **PHONE:** ${phone}\n🛠️ **SERVICE:** ${serviceNeeded || 'Not Specified'}`,
+        description: `👤 **CLIENT:** ${name}\n📞 **PHONE:** [${phone}](tel:${phone.replace(/\s+/g, '')})\n🛠️ **SERVICE:** ${serviceNeeded || 'Not Specified'}`,
         footer: { text: "👉 Tap the phone number above to call them back instantly!" }
       }]
     };
