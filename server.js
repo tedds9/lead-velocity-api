@@ -30,7 +30,7 @@ app.post('/api/v1/lead-hook', async (req, res) => {
       body: JSON.stringify(discordEmbedPayload) 
     });
 
-    if (!discordEmbedPayload.ok) {
+    if (!discordResponse.ok) {
       throw new Error(`Discord API responded with status ${discordResponse.status}`)
     }
 
