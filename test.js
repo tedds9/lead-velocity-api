@@ -1,11 +1,11 @@
-// Native node data injector to bypass Windows PowerShell bugs
+
 const testPayload = JSON.stringify({
     name: "Todd Daniels",
     phone: "+12505550192",
     serviceNeeded: "Custom Drop Inventory Setup"
 });
 
-fetch('https://lead-velocity-api.onrender.com', {
+fetch('https://lead-velocity-api.onrender.com/api/v1/lead-hook', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: testPayload

@@ -24,11 +24,15 @@ app.post('/api/v1/lead-hook', async (req, res) => {
       }]
     };
     
-    await fetch(process.env.DISCORD_WEBHOOK_URL, {
+    const discordResponse = await fetch(process.env.DISCORD_WEBHOOK_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(discordEmbedPayload) 
     });
+
+    if (!discordEmbedPayload.ok) {
+      throw new Error(`Discord API responded with status ${discordResponse.status}`)
+    }
 
     console.log("\n=== 🚀 AUTOMATION ENGINE INTERCEPTED LEAD ===");
     console.log(`👤 CLIENT: ${name} | 📞 PHONE: ${phone}`);
